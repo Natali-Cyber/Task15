@@ -9,6 +9,12 @@ public class RollingAverage {
      * @return список средних значений подмассивов
      */
     public static List<Double> getRollingAverage(ArrayList<Integer> arr, int k) {
+        int n = arr.size(); // Получаем размер массива
+
+        // Проверка на допустимость значения k
+        if (k <= 0 || k > n) {
+            throw new IllegalArgumentException("k должно быть положительным и меньше или равно размеру массива.");
+        }
         // Создаём список result типа Double, который будет хранить средние значения каждого подмассива.
         List<Double> result = new ArrayList<>();
 
